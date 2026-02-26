@@ -1,0 +1,75 @@
+{
+    "Header": {
+        "brandName": "Jackpot",
+        "brandAccent": "Global",
+        "buyTicket": "MUA VÉ",
+        "leaderboard": "Bảng Xếp Hạng",
+        "token": "Token $JPK",
+        "history": "Lịch Sử"
+    },
+    "Hero": {
+        "globalSuperJackpot": "Siêu Giải Thưởng Toàn Cầu",
+        "nextDraw": "Kỳ Quay Tiếp Theo",
+        "days": "NGÀY",
+        "hours": "GIỜ",
+        "mins": "PHÚT",
+        "secs": "GIÂY",
+        "buyTicketNow": "MUA VÉ NGAY - 10 JPK",
+        "systemStatus": "Trạng Thái Hệ Thống"
+    },
+    "WinnerTicker": {
+        "won": "TRÚNG",
+        "jackpot": "JACKPOT",
+        "secondPrize": "KỲ QUAY 45 - GIẢI NHÌ",
+        "thirdPrize": "KỲ QUAY 45 - GIẢI BA",
+        "firstPrize": "KỲ QUAY 45 - GIẢI NHẤT",
+        "megaJackpot": "MEGA JACKPOT",
+        "noWinnersYet": "CHƯA CÓ NGƯỜI TRÚNG THƯỞNG"
+    },
+    "MyTickets": {
+        "title": "Cơ Sở Dữ Liệu",
+        "subtitle": "Vé Của Bạn",
+        "unverifiedTitle": "Danh Tính Chưa Xác Minh",
+        "unverifiedDesc": "Yêu cầu kết nối ví để truy cập cơ sở dữ liệu vé. Vui lòng khởi tạo giao thức mạng.",
+        "awaitingDraw": "Chờ Quay Thưởng",
+        "drawHistory": "Lịch Sử Xổ Số",
+        "noRecords": "Không Tìm Thấy Bản Ghi Nào Trong Khu Vực Này",
+        "draw": "Kỳ Quay",
+        "pending": "ĐANG CHỜ",
+        "prizeSecured": "ĐÃ TRÚNG THƯỞNG",
+        "lost": "TRƯỢT",
+        "result": "Kết quả",
+        "noMatch": "Không trúng",
+        "claimPrize": "Nhận Thưởng",
+        "error": "Lỗi truy xuất dữ liệu. Vui lòng kiểm tra kết nối thiết bị đầu cuối."
+    },
+    "History": {
+        "title": "Lịch Sử",
+        "subtitle": "Các Kỳ Quay Trước",
+        "draw": "Kỳ Quay",
+        "date": "Ngày",
+        "winningNumbers": "Bộ Số Trúng Thưởng",
+        "jackpot": "Giải Jackpot",
+        "winners": "Số Người Trúng",
+        "noRecords": "Chưa có dữ liệu kỳ quay nào."
+    },
+    "TokenInfo": {
+        "heroTitle": "$JPK Token - Trái tim của hệ sinh thái Jackpot Global",
+        "heroDesc": "Không chỉ là một đồng tiền, $JPK là cỗ máy tạo ra sự giàu có với cơ chế giảm phát tự động và bơm quỹ xổ số liên tục.",
+        "contractLabel": "Smart Contract",
+        "copyToClipboard": "Sao chép",
+        "copied": "Đã sao chép!",
+        "totalSupplyLabel": "Tổng cung (Total Supply):",
+        "totalSupplyValue": "1,000,000,000",
+        "taxTitle": "3% Jackpot Tax",
+        "taxDesc": "3% mọi giao dịch được tự động chuyển vào Quỹ Xổ Số. Hũ Jackpot sẽ liên tục phình to ngay cả khi bạn đang ngủ.",
+        "burnTitle": "1% Auto-Burn",
+        "burnDesc": "1% bị đốt cháy vĩnh viễn khỏi tổng cung. Càng nhiều giao dịch, $JPK càng khan hiếm và tăng giá trị.",
+        "utilitiesTitle": "Tính ứng dụng của $JPK",
+        "util1": "Dùng để mua vé Power 6/55.",
+        "util2": "Trả thưởng trực tiếp bằng $JPK với thanh khoản tự động.",
+        "util3": "Cầm (Hold) $JPK để hưởng lợi từ sự khan hiếm nguồn cung.",
+        "playLotteryBtn": "Chơi Xổ Số Ngay",
+        "buyJpkBtn": "Mua $JPK trên PancakeSwap"
+    }
+}

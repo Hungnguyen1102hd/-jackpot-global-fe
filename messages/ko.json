@@ -1,0 +1,26 @@
+{
+    "Header": {
+        "brandName": "Jackpot",
+        "brandAccent": "Global",
+        "buyTicket": "티켓 구매",
+        "leaderboard": "순위표"
+    },
+    "Hero": {
+        "globalSuperJackpot": "글로벌 슈퍼 잭팟",
+        "nextDraw": "다음 추첨",
+        "days": "일",
+        "hours": "시간",
+        "mins": "분",
+        "secs": "초",
+        "buyTicketNow": "지금 구매 - 10 JPK",
+        "systemStatus": "시스템 상태"
+    },
+    "WinnerTicker": {
+        "won": "당첨",
+        "jackpot": "잭팟",
+        "secondPrize": "추첨 45 - 2등",
+        "thirdPrize": "추첨 45 - 3등",
+        "firstPrize": "추첨 45 - 1등",
+        "megaJackpot": "메가 잭팟"
+    }
+}

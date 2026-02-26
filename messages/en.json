@@ -1,0 +1,75 @@
+{
+    "Header": {
+        "brandName": "Jackpot",
+        "brandAccent": "Global",
+        "buyTicket": "MUA VÉ",
+        "leaderboard": "Leaderboard",
+        "token": "$JPK Token",
+        "history": "History"
+    },
+    "Hero": {
+        "globalSuperJackpot": "Global Super Jackpot",
+        "nextDraw": "Next Protocol Draw",
+        "days": "DAYS",
+        "hours": "HOURS",
+        "mins": "MINS",
+        "secs": "SECS",
+        "buyTicketNow": "MUA VÉ NGAY - 10 JPK",
+        "systemStatus": "System Status"
+    },
+    "WinnerTicker": {
+        "won": "WON",
+        "jackpot": "JACKPOT",
+        "secondPrize": "DRAW 45 - 2ND PRIZE",
+        "thirdPrize": "DRAW 45 - 3RD PRIZE",
+        "firstPrize": "DRAW 45 - 1ST PRIZE",
+        "megaJackpot": "MEGA JACKPOT",
+        "noWinnersYet": "NO WINNERS YET"
+    },
+    "MyTickets": {
+        "title": "Ticket",
+        "subtitle": "Database",
+        "unverifiedTitle": "Identity Unverified",
+        "unverifiedDesc": "Connection required to access ticket database. Please initialize network protocols.",
+        "awaitingDraw": "Awaiting Draw",
+        "drawHistory": "Draw History",
+        "noRecords": "No records found in this sector",
+        "draw": "Draw",
+        "pending": "PENDING",
+        "prizeSecured": "PRIZE SECURED",
+        "lost": "LOST",
+        "result": "Result",
+        "noMatch": "No match",
+        "claimPrize": "Claim Prize",
+        "error": "Error retrieving records. Please check terminal connection."
+    },
+    "History": {
+        "title": "History",
+        "subtitle": "Previous Draws",
+        "draw": "Draw",
+        "date": "Date",
+        "winningNumbers": "Winning Numbers",
+        "jackpot": "Jackpot Prize",
+        "winners": "Winners",
+        "noRecords": "No draw data available yet."
+    },
+    "TokenInfo": {
+        "heroTitle": "$JPK Token - The Heart of the Jackpot Global Ecosystem",
+        "heroDesc": "More than just a currency, $JPK is a wealth generation machine with an automated deflationary mechanism and continuous lottery fund injection.",
+        "contractLabel": "Smart Contract",
+        "copyToClipboard": "Copy to Clipboard",
+        "copied": "Copied!",
+        "totalSupplyLabel": "Total Supply:",
+        "totalSupplyValue": "1,000,000,000",
+        "taxTitle": "3% Jackpot Tax",
+        "taxDesc": "3% of every transaction is automatically sent to the Lottery Fund. The Jackpot grows continuously even while you sleep.",
+        "burnTitle": "1% Auto-Burn",
+        "burnDesc": "1% is permanently burned from the total supply. The more transactions, the scarcer $JPK becomes, driving up its value.",
+        "utilitiesTitle": "Utilities of $JPK",
+        "util1": "Used to purchase Power 6/55 tickets.",
+        "util2": "Direct rewards in $JPK with automated liquidity.",
+        "util3": "Hold $JPK to benefit from supply scarcity.",
+        "playLotteryBtn": "Play Lottery Now",
+        "buyJpkBtn": "Buy $JPK on PancakeSwap"
+    }
+}
