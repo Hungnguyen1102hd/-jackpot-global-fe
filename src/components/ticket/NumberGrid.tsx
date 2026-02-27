@@ -57,10 +57,12 @@ export function NumberGrid() {
 
     useEffect(() => {
         if (isBuySuccess) {
-            setToast({
-                type: "success",
-                message: "Mua vé thành công! Vé của bạn đã được ghi nhận.",
-            });
+            setTimeout(() => {
+                setToast({
+                    type: "success",
+                    message: "Mua vé thành công! Vé của bạn đã được ghi nhận.",
+                });
+            }, 0);
             // Gọi timeout để tách context render giúp tránh cảnh báo cascading renders
             setTimeout(() => {
                 setSelectedNumbers([]);
@@ -79,29 +81,35 @@ export function NumberGrid() {
     // Toast cho trạng thái giao dịch Approve
     useEffect(() => {
         if (isApproveConfirming) {
-            setToast({
-                type: "info",
-                message: "Giao dịch Approve $JPK đang chờ xác nhận trên blockchain...",
-            });
+            setTimeout(() => {
+                setToast({
+                    type: "info",
+                    message: "Giao dịch Approve $JPK đang chờ xác nhận trên blockchain...",
+                });
+            }, 0);
         }
     }, [isApproveConfirming]);
 
     useEffect(() => {
         if (isApproveSuccess) {
-            setToast({
-                type: "success",
-                message: "Approve $JPK thành công. Bạn có thể tiến hành mua vé.",
-            });
+            setTimeout(() => {
+                setToast({
+                    type: "success",
+                    message: "Approve $JPK thành công. Bạn có thể tiến hành mua vé.",
+                });
+            }, 0);
         }
     }, [isApproveSuccess]);
 
     // Toast cho trạng thái giao dịch mua vé
     useEffect(() => {
         if (isBuyConfirming) {
-            setToast({
-                type: "info",
-                message: "Giao dịch mua vé đang chờ xác nhận trên blockchain...",
-            });
+            setTimeout(() => {
+                setToast({
+                    type: "info",
+                    message: "Giao dịch mua vé đang chờ xác nhận trên blockchain...",
+                });
+            }, 0);
         }
     }, [isBuyConfirming]);
 

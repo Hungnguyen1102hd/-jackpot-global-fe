@@ -47,6 +47,12 @@ export function Header() {
                         {t('token')}
                     </Link>
                     <Link
+                        href="/whitepaper"
+                        className="text-gray-300 hover:text-[#39FF14] transition-all duration-300 uppercase font-bold text-sm tracking-widest hover:drop-shadow-[0_0_8px_#39FF14] hover:-translate-y-0.5"
+                    >
+                        {t('docs')}
+                    </Link>
+                    <Link
                         href="/buy-ticket"
                         className="text-gray-300 hover:text-[#00F0FF] transition-all duration-300 uppercase font-bold text-sm tracking-widest hover:drop-shadow-[0_0_8px_#00F0FF] hover:-translate-y-0.5"
                     >
@@ -63,6 +69,12 @@ export function Header() {
                         className="text-gray-300 hover:text-[#FCEE09] transition-all duration-300 uppercase font-bold text-sm tracking-widest hover:drop-shadow-[0_0_8px_#FCEE09] hover:-translate-y-0.5"
                     >
                         {t('leaderboard')}
+                    </Link>
+                    <Link
+                        href="/faucet"
+                        className="text-[#39FF14] transition-all duration-300 uppercase font-bold text-sm tracking-widest drop-shadow-[0_0_8px_#39FF14] hover:-translate-y-0.5"
+                    >
+                        {t('faucet')}
                     </Link>
                 </nav>
 

@@ -38,14 +38,7 @@ type DrawHistoryItem = {
     winnerCount: number;
 };
 
-// Mock Data
-type Ticket = {
-    id: string;
-    drawId: string;
-    numbers: number[];
-    status: string;
-    prize?: string;
-};
+
 
 function TicketCard({ ticket, type }: { ticket: TicketData, type: 'pending' | 'history' }) {
     const isWinner = ticket.isWinner;

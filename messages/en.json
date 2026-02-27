@@ -5,7 +5,9 @@
         "buyTicket": "BUY TICKET",
         "leaderboard": "MY TICKETS",
         "token": "$JPK Token",
-        "history": "History"
+        "history": "History",
+        "docs": "WHITE PAPER",
+        "faucet": "FAUCET"
     },
     "Hero": {
         "globalSuperJackpot": "Global Super Jackpot",
@@ -71,5 +73,56 @@
         "util3": "Hold $JPK to benefit from supply scarcity.",
         "playLotteryBtn": "Play Lottery Now",
         "buyJpkBtn": "Buy $JPK on PancakeSwap"
+    },
+    "Whitepaper": {
+        "title": "Whitepaper",
+        "subtitle": "Decentralized System Architecture",
+        "summary": {
+            "title": "1. Project Summary",
+            "content": "A transparent decentralized lottery solution powered by Chainlink VRF."
+        },
+        "problemSolution": {
+            "title": "2. Problem & Solution",
+            "problemTitle": "Traditional Lottery (Blackbox)",
+            "problemDesc": "Centralized, opaque draws. Delayed payouts. High risk of manipulation.",
+            "solutionTitle": "Jackpot Global (Transparent)",
+            "solutionDesc": "Verifiably random draws via Chainlink VRF. Instant payouts via Smart Contracts. A Win-Win ecosystem."
+        },
+        "tokenomics": {
+            "title": "3. Tokenomics $JPK",
+            "totalSupply": "Total Supply: 1,000,000,000 $JPK",
+            "tax": "3% Tax -> Jackpot Fund",
+            "burn": "1% Auto-Burn (Deflationary)"
+        },
+        "gameMechanics": {
+            "title": "4. Power 6/55 Game Mechanics",
+            "ticketPrice": "Ticket Price: 10 $JPK",
+            "rules": "Choose 6 numbers from 1 to 55.",
+            "schedule": "Draw Schedule: 18:30 (UTC+7) every Tuesday, Thursday, Saturday.",
+            "prize": "Match all 6 numbers to win 75% of the Jackpot Pool."
+        },
+        "technology": {
+            "title": "5. Technology Stack",
+            "stack": "Solidity (Smart Contracts), Chainlink VRF (Randomness), Next.js (Frontend), NestJS (Backend)."
+        },
+        "roadmap": {
+            "title": "6. Roadmap",
+            "phase1": "Phase 1: Testnet Launch & Security Audit",
+            "phase2": "Phase 2: Mainnet Activation & DEX Listing",
+            "phase3": "Phase 3: Mobile App & Ranking System",
+            "phase4": "Phase 4: Multichain Expansion"
+        }
+    },
+    "Faucet": {
+        "title": "NEON FAUCET",
+        "subtitle": "SECURE TESTNET FUNDS",
+        "description": "Initialize your wallet for the Power 6/55 Terminal. Claim a 24-hour ration of 100 $JPK to begin operations.",
+        "balanceLabel": "CURRENT $JPK BALANCE",
+        "claimButton": "CLAIM 100 $JPK",
+        "cooldownLabel": "NEXT CLAIM AVAILABLE IN",
+        "claimSuccess": "FUNDS DEPOSITED: 100 $JPK acquired.",
+        "claimError": "SYSTEM FAILURE: Claim sequence interrupted. Please try again.",
+        "needConnect": "ACCESS DENIED: Connect wallet to proceed.",
+        "processing": "PROCESSING TRANSACTION..."
     }
 }

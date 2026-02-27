@@ -5,7 +5,9 @@
         "buyTicket": "MUA VÉ",
         "leaderboard": "VÉ CỦA TÔI",
         "token": "Token $JPK",
-        "history": "Lịch Sử"
+        "history": "Lịch Sử",
+        "docs": "TÀI LIỆU",
+        "faucet": "VÒI NHẬN THƯỞNG"
     },
     "Hero": {
         "globalSuperJackpot": "Siêu Giải Thưởng Toàn Cầu",
@@ -71,5 +73,56 @@
         "util3": "Cầm (Hold) $JPK để hưởng lợi từ sự khan hiếm nguồn cung.",
         "playLotteryBtn": "Chơi Xổ Số Ngay",
         "buyJpkBtn": "Mua $JPK trên PancakeSwap"
+    },
+    "Whitepaper": {
+        "title": "Whitepaper",
+        "subtitle": "Kiến trúc hệ thống phi tập trung",
+        "summary": {
+            "title": "1. Tóm tắt dự án",
+            "content": "Giải pháp xổ số phi tập trung minh bạch với Chainlink VRF."
+        },
+        "problemSolution": {
+            "title": "2. Vấn đề & Giải pháp",
+            "problemTitle": "Xổ số truyền thống (Hộp đen)",
+            "problemDesc": "Tập trung, mờ ám. Trả thưởng chậm trễ. Nguy cơ thao túng cao.",
+            "solutionTitle": "Jackpot Global (Minh bạch)",
+            "solutionDesc": "Quay thưởng ngẫu nhiên xác minh qua Chainlink VRF. Trả thưởng tức thì qua Smart Contract. Hệ sinh thái Win-Win."
+        },
+        "tokenomics": {
+            "title": "3. Tokenomics $JPK",
+            "totalSupply": "Tổng cung: 1,000,000,000 $JPK",
+            "tax": "Cơ chế: 3% Thuế đưa vào Quỹ Jackpot",
+            "burn": "1% Tự động đốt (Auto-Burn)"
+        },
+        "gameMechanics": {
+            "title": "4. Cơ chế trò chơi Power 6/55",
+            "ticketPrice": "Giá vé: 10 JPK",
+            "rules": "Chọn 6 số từ 1-55.",
+            "schedule": "Quay thưởng: 18:30 (UTC+7) Thứ 3, 5, 7.",
+            "prize": "Trúng 6 số nhận 75% hũ."
+        },
+        "technology": {
+            "title": "5. Công nghệ",
+            "stack": "Solidity (Hợp đồng thông minh), Chainlink VRF (Cơ chế sinh số ngẫu nhiên), Next.js (Frontend), NestJS (Backend)."
+        },
+        "roadmap": {
+            "title": "6. Lộ trình phát triển (Roadmap)",
+            "phase1": "Phase 1: Chạy thử Testnet",
+            "phase2": "Phase 2: Chạy chính thức Mainnet & Lên sàn Dex",
+            "phase3": "Phase 3: Ra mắt Mobile App & Hệ thống Rank",
+            "phase4": "Phase 4: Mở rộng đa chuỗi (Multichain)"
+        }
+    },
+    "Faucet": {
+        "title": "NEON FAUCET",
+        "subtitle": "NHẬN TESTNET FUNDS",
+        "description": "Khởi tạo ví của bạn cho Terminal Power 6/55. Yêu cầu cấp 100 $JPK mỗi 24 giờ để bắt đầu vận hành.",
+        "balanceLabel": "SỐ DƯ $JPK HIỆN TẠI",
+        "claimButton": "NHẬN 100 $JPK",
+        "cooldownLabel": "LẦN NHẬN TIẾP THEO SAU",
+        "claimSuccess": "THÀNH CÔNG: Đã nạp 100 $JPK vào ví.",
+        "claimError": "LỖI HỆ THỐNG: Quá trình bị gián đoạn. Vui lòng thử lại.",
+        "needConnect": "TỪ CHỐI TRUY CẬP: Hãy kết nối ví trước.",
+        "processing": "ĐANG XỬ LÝ GIAO DỊCH..."
     }
 }

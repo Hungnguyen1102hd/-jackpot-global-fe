@@ -1,5 +1,4 @@
 'use client';
-import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
@@ -9,7 +8,6 @@ const BACKEND_URL =
     'http://localhost:3001';
 
 export function JackpotOdometer() {
-    const [value, setValue] = useState(0);
     const t = useTranslations('Hero');
 
     const { data } = useQuery({
@@ -23,18 +21,13 @@ export function JackpotOdometer() {
         },
         refetchInterval: 15000,
     });
-
-    useEffect(() => {
-        if (!data) return;
-
-        const parsed =
-            (data.formattedBalance && Number.parseFloat(data.formattedBalance)) ||
-            (data.rawBalance ? Number(data.rawBalance) / 1e18 : 0);
-
-        if (!Number.isNaN(parsed)) {
-            setValue(parsed);
-        }
-    }, [data]);
+    const value = data
+        ? (data.formattedBalance && !Number.isNaN(Number.parseFloat(data.formattedBalance)))
+            ? Number.parseFloat(data.formattedBalance)
+            : (data.rawBalance && !Number.isNaN(Number(data.rawBalance) / 1e18))
+                ? Number(data.rawBalance) / 1e18
+                : 0
+        : 0;
 
     const formatted = value.toLocaleString("en-US", {
         minimumFractionDigits: 2,
