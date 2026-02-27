@@ -2,8 +2,8 @@
     "Header": {
         "brandName": "Jackpot",
         "brandAccent": "Global",
-        "buyTicket": "MUA VÉ",
-        "leaderboard": "Leaderboard",
+        "buyTicket": "BUY TICKET",
+        "leaderboard": "MY TICKETS",
         "token": "$JPK Token",
         "history": "History"
     },
@@ -14,7 +14,7 @@
         "hours": "HOURS",
         "mins": "MINS",
         "secs": "SECS",
-        "buyTicketNow": "MUA VÉ NGAY - 10 JPK",
+        "buyTicketNow": "BUY TICKETS NOW - 10 JPK",
         "systemStatus": "System Status"
     },
     "WinnerTicker": {
