@@ -78,14 +78,19 @@ function TicketCard({ ticket, type }: { ticket: TicketData, type: 'pending' | 'h
 
             {/* Numbers */}
             <div className="flex flex-wrap gap-2 mb-6">
-                {ticket.numbers.map((n: number, idx: number) => (
-                    <div key={idx} className={`
-            w-10 h-10 flex items-center justify-center font-mono font-bold border
-            ${isWinner ? "border-[#39FF14] text-[#39FF14] shadow-[0_0_10px_#39FF14]" : "border-gray-700 text-gray-300"}
-          `}>
-                        {n.toString().padStart(2, "0")}
-                    </div>
-                ))}
+                {ticket.numbers.map((n: number, idx: number) => {
+                    const isWinningNumber = type === 'history' && ticket.draw && ticket.draw.winningNumbers.includes(n);
+                    return (
+                        <div key={idx} className={`
+                            w-10 h-10 flex items-center justify-center font-mono font-bold border transition-colors duration-300
+                            ${isWinner && isWinningNumber ? "border-[#39FF14] text-[#39FF14] shadow-[0_0_10px_#39FF14]" :
+                                isWinningNumber ? "border-[#FFFF00] text-[#FFFF00] bg-[#FFFF00]/10 shadow-[0_0_10px_#FFFF00]" :
+                                    "border-gray-700 text-gray-400 opacity-50"}
+                        `}>
+                            {n.toString().padStart(2, "0")}
+                        </div>
+                    );
+                })}
             </div>
 
             {/* Action / Prize Area */}
