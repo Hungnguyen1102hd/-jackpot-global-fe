@@ -155,12 +155,16 @@
         "tablePrize": "당첨금",
         "tableMatch": "결과",
         "tableWinners": "당첨자 수",
-        "tableValue": "금액 ()",
-        "tierPrefix": "등",
-        "jackpotName": "잭팟",
+        "tableValue": "금액",
+        "tier_jackpot": "잭팟",
+        "tier_first": "1등",
+        "tier_second": "2등",
+        "tier_third": "3등",
+        "matchCount": "{count}개 일치",
         "disclaimer": "스마트 컨트랙트 및 인덱서에서 직접 검색된 데이터입니다. 100% 투명합니다.",
         "loading": "데이터 불러오는 중...",
         "error": "서버 연결 오류",
-        "standby": "시스템 대기 중: 첫 추첨을 기다리는 중입니다"
+        "standby": "시스템 대기 중: 첫 추첨을 기다리는 중입니다",
+        "viewOnBlockchain": "블록체인에서 보기"
     }
 }

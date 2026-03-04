@@ -10,8 +10,8 @@ const BACKEND_URL =
     'http://localhost:3001';
 
 type PrizeTier = {
-    name: string;
-    match: string;
+    tier: string;       // 'jackpot' | 'first' | 'second' | 'third'
+    match: number;      // 6, 5, 4, 3
     winners: number;
     prizeValue: string;
 };
@@ -183,7 +183,7 @@ export default function LatestDrawResult() {
                             </thead>
                             <tbody>
                                 {data.tiers.map((tier, idx) => {
-                                    const isJackpot = tier.name === 'Jackpot';
+                                    const isJackpot = tier.tier === 'jackpot';
                                     return (
                                         <tr
                                             key={idx}
@@ -203,11 +203,11 @@ export default function LatestDrawResult() {
                                                     <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#FF3939] shadow-[0_0_10px_#FF3939]"></div>
                                                 )}
                                                 <span className={isJackpot ? 'pl-2' : ''}>
-                                                    {isJackpot ? tier.name : t('tierPrefix') + ' ' + tier.name.replace('Giải ', '')}
+                                                    {t(`tier_${tier.tier}`)}
                                                 </span>
                                             </td>
                                             <td className="py-4 px-2 text-white/50 text-sm hidden sm:table-cell text-center font-mono">
-                                                {tier.match}
+                                                {t('matchCount', { count: tier.match })}
                                             </td>
                                             <td
                                                 className={`py-4 px-2 font-mono text-center ${tier.winners > 0 ? 'text-[#39FF14]' : 'text-white/20'

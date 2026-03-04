@@ -155,12 +155,16 @@
         "tablePrize": "PRIZE",
         "tableMatch": "MATCH",
         "tableWinners": "WINNERS",
-        "tableValue": "VALUE ()",
-        "tierPrefix": "Prize",
-        "jackpotName": "Jackpot",
+        "tableValue": "VALUE",
+        "tier_jackpot": "Jackpot",
+        "tier_first": "1st Prize",
+        "tier_second": "2nd Prize",
+        "tier_third": "3rd Prize",
+        "matchCount": "{count} numbers",
         "disclaimer": "Data retrieved directly from Smart Contract & Indexer. 100% Transparent.",
         "loading": "LOADING DATA...",
         "error": "SERVER CONNECTION ERROR",
-        "standby": "SYSTEM STANDBY: WAITING FOR THE FIRST DRAW"
+        "standby": "SYSTEM STANDBY: WAITING FOR THE FIRST DRAW",
+        "viewOnBlockchain": "VIEW ON BLOCKCHAIN"
     }
 }
