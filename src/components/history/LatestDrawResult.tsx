@@ -103,10 +103,12 @@ export default function LatestDrawResult() {
             className="w-full relative overflow-hidden bg-black/40 backdrop-blur-md border border-cyan-500/30 rounded-2xl p-6 md:p-8 shadow-[0_0_30px_rgba(0,240,255,0.05)]"
         >
             {/* Decorative corners */}
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#00F0FF]/50 rounded-tl-xl pointer-events-none"></div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#00F0FF]/50 rounded-br-xl pointer-events-none"></div>
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#00F0FF]/40 rounded-tl-xl pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#00F0FF]/40 rounded-tr-xl pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#00F0FF]/40 rounded-bl-xl pointer-events-none"></div>
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#00F0FF]/40 rounded-br-xl pointer-events-none"></div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
                 {/* Left Column: Info & Balls */}
                 <div className="flex flex-col gap-6 border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-8">
                     <div className="flex flex-col gap-2">
@@ -139,21 +141,24 @@ export default function LatestDrawResult() {
                         </p>
                     </div>
 
-                    <div className="mt-4">
-                        <span className="text-sm text-white/40 uppercase tracking-widest mb-4 block">
+                    <div className="mt-auto">
+                        <span className="text-xs text-white/40 uppercase tracking-[0.2em] mb-4 block font-mono">
                             {t('winningNumbers')}
                         </span>
-                        <div className="flex flex-wrap gap-3 md:gap-4">
+                        <div className="flex flex-wrap gap-4 items-center">
                             {data.winningNumbers.map((num, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ scale: 0, rotate: -180 }}
                                     animate={{ scale: 1, rotate: 0 }}
                                     transition={{ delay: idx * 0.1, type: 'spring', bounce: 0.5 }}
-                                    className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#FF3939]/20 to-[#FF8C00]/20 border border-[#FF3939]/80 flex justify-center items-center text-white font-black text-2xl md:text-3xl shadow-[0_0_20px_rgba(255,57,57,0.4)] relative"
+                                    className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#FF3939]/30 via-[#FF3939]/10 to-transparent border border-[#FF3939]/60 flex justify-center items-center text-white font-black text-2xl md:text-3xl shadow-[0_0_25px_rgba(255,57,57,0.3)] relative group"
                                 >
-                                    <div className="absolute inset-0 rounded-full border border-white/20 inset-shadow-sm"></div>
-                                    {num.toString().padStart(2, '0')}
+                                    <div className="absolute inset-0 rounded-full border border-white/20 scale-[0.85]"></div>
+                                    <span className="relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+                                        {num.toString().padStart(2, '0')}
+                                    </span>
+                                    <div className="absolute -inset-1 bg-[#FF3939]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 </motion.div>
                             ))}
                         </div>
@@ -165,13 +170,13 @@ export default function LatestDrawResult() {
                     <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-[#00F0FF]/30 text-xs text-[#00F0FF] uppercase tracking-widest font-mono">
-                                    <th className="py-3 px-2 font-medium">{t('tablePrize')}</th>
-                                    <th className="py-3 px-2 font-medium hidden sm:table-cell">
+                                <tr className="border-b border-[#00F0FF]/20 text-[10px] md:text-xs text-[#00F0FF]/60 uppercase tracking-[0.2em] font-mono">
+                                    <th className="py-4 px-2 font-semibold">{t('tablePrize')}</th>
+                                    <th className="py-4 px-2 font-semibold hidden sm:table-cell text-center">
                                         {t('tableMatch')}
                                     </th>
-                                    <th className="py-3 px-2 font-medium">{t('tableWinners')}</th>
-                                    <th className="py-3 px-2 font-medium text-right">
+                                    <th className="py-4 px-2 font-semibold text-center">{t('tableWinners')}</th>
+                                    <th className="py-4 px-2 font-semibold text-right">
                                         {t('tableValue')}
                                     </th>
                                 </tr>
@@ -193,30 +198,33 @@ export default function LatestDrawResult() {
                                             )}
                                             <td
                                                 className={`py-4 px-2 font-bold tracking-wider ${isJackpot
-                                                    ? 'text-[#FF3939] animate-pulse drop-shadow-[0_0_5px_rgba(255,57,57,0.8)]'
-                                                    : 'text-white/90'
+                                                    ? 'text-[#FF3939] drop-shadow-[0_0_8px_rgba(255,57,57,0.6)]'
+                                                    : 'text-white/80'
                                                     }`}
                                             >
                                                 {isJackpot ? tier.name : t('tierPrefix') + ' ' + tier.name.replace('Giải ', '')}
                                             </td>
-                                            <td className="py-4 px-2 text-white/50 text-sm hidden sm:table-cell">
+                                            <td className="py-4 px-2 text-white/50 text-sm hidden sm:table-cell text-center font-mono">
                                                 {tier.match}
                                             </td>
                                             <td
-                                                className={`py-4 px-2 font-bold ${tier.winners > 0 ? 'text-[#39FF14]' : 'text-white/40'
+                                                className={`py-4 px-2 font-mono text-center ${tier.winners > 0 ? 'text-[#39FF14]' : 'text-white/20'
                                                     }`}
                                             >
                                                 {tier.winners.toLocaleString()}
                                             </td>
                                             <td
-                                                className={`py-4 px-2 text-right font-black ${isJackpot
-                                                    ? 'text-[#FCEE09] text-xl drop-shadow-[0_0_8px_rgba(252,238,9,0.5)]'
-                                                    : 'text-[#00F0FF]'
+                                                className={`py-4 px-2 text-right font-black tracking-tight ${isJackpot
+                                                    ? 'text-[#FCEE09] text-xl md:text-2xl drop-shadow-[0_0_12px_rgba(252,238,9,0.4)]'
+                                                    : 'text-[#00F0FF] text-lg'
                                                     }`}
                                             >
                                                 {isNaN(Number(tier.prizeValue))
                                                     ? tier.prizeValue
-                                                    : Number(tier.prizeValue).toLocaleString() + ' $JPK'}
+                                                    : Number(tier.prizeValue).toLocaleString()}
+                                                {!isNaN(Number(tier.prizeValue)) && (
+                                                    <span className="text-[10px] ml-1 opacity-60 font-medium">$JPK</span>
+                                                )}
                                             </td>
                                         </tr>
                                     );
