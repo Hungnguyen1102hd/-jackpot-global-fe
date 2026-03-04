@@ -101,12 +101,34 @@
             "schedule": "Draw Schedule: 18:30 (UTC+7) every Tuesday, Thursday, Saturday.",
             "prize": "Match all 6 numbers to win 75% of the Jackpot Pool."
         },
+        "prizeClaimStrategy": {
+            "title": "5. Prize Claim Strategy",
+            "instantClaim": {
+                "title": "Instant Claim",
+                "desc": "For players who want immediate profit.",
+                "winnerReceives": "Winner Receives: 70% of the Jackpot instantly.",
+                "seedPrize": "15% Seed Prize retained for the next draw.",
+                "treasury": "10% Operation & Development Treasury.",
+                "burn": "5% Permanent Burn reducing total supply."
+            },
+            "vestingClaim": {
+                "tag": "Recommended",
+                "title": "Vesting Claim",
+                "desc": "Maximize profit, prevent dumping, and create passive income.",
+                "winnerReceivesTotal": "Winner Receives Total: 90% of the Jackpot.",
+                "instant": "Instant Claim: 50%.",
+                "vesting": "Vesting: 10% per month for the next 4 months.",
+                "seedPrize": "4% Seed Prize.",
+                "treasury": "5% Operation & Development.",
+                "burn": "1% Permanent Burn."
+            }
+        },
         "technology": {
-            "title": "5. Technology Stack",
+            "title": "6. Technology Stack",
             "stack": "Solidity (Smart Contracts), Chainlink VRF (Randomness), Next.js (Frontend), NestJS (Backend)."
         },
         "roadmap": {
-            "title": "6. Roadmap",
+            "title": "7. Roadmap",
             "phase1": "Phase 1: Testnet Launch & Security Audit",
             "phase2": "Phase 2: Mainnet Activation & DEX Listing",
             "phase3": "Phase 3: Mobile App & Ranking System",

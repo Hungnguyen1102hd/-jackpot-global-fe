@@ -341,6 +341,11 @@
           "internalType": "uint256",
           "name": "_ticketId",
           "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isInstant",
+          "type": "bool"
         }
       ],
       "name": "claimPrize",

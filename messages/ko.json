@@ -3,7 +3,11 @@
         "brandName": "Jackpot",
         "brandAccent": "Global",
         "buyTicket": "티켓 구매",
-        "leaderboard": "순위표"
+        "leaderboard": "내 티켓",
+        "token": "$JPK 토큰",
+        "history": "추첨 내역",
+        "docs": "백서",
+        "faucet": "무료 충전소"
     },
     "Hero": {
         "globalSuperJackpot": "글로벌 슈퍼 잭팟",
@@ -21,6 +25,126 @@
         "secondPrize": "추첨 45 - 2등",
         "thirdPrize": "추첨 45 - 3등",
         "firstPrize": "추첨 45 - 1등",
-        "megaJackpot": "메가 잭팟"
+        "megaJackpot": "메가 잭팟",
+        "noWinnersYet": "아직 당첨자가 없습니다"
+    },
+    "MyTickets": {
+        "title": "티켓",
+        "subtitle": "데이터베이스",
+        "unverifiedTitle": "신원 미확인",
+        "unverifiedDesc": "데이터베이스에 접근하려면 연결이 필요합니다. 네트워크 프로토콜을 초기화하십시오.",
+        "awaitingDraw": "추첨 대기 중",
+        "drawHistory": "추첨 내역",
+        "noRecords": "이 구역에 기록이 없습니다",
+        "draw": "회차",
+        "pending": "대기 중",
+        "prizeSecured": "상금 확보",
+        "lost": "낙첨",
+        "result": "결과",
+        "noMatch": "일치하지 않음",
+        "claimPrize": "상금 수령",
+        "error": "기록을 불러오는 중 오류가 발생했습니다. 터미널 연결을 확인하세요."
+    },
+    "History": {
+        "title": "추첨 내역",
+        "subtitle": "이전 추첨 결과",
+        "draw": "회차",
+        "date": "날짜",
+        "winningNumbers": "당첨 번호",
+        "jackpot": "잭팟 상금",
+        "winners": "당첨자",
+        "noRecords": "아직 추첨 데이터가 없습니다."
+    },
+    "TokenInfo": {
+        "heroTitle": "$JPK 토큰 - Jackpot Global 생태계의 핵심",
+        "heroDesc": "단순한 화폐를 넘어 연속적인 복권 펀드 주입과 자동 디플레이션 메커니즘을 갖춘 자산 생성기입니다.",
+        "contractLabel": "스마트 계약",
+        "copyToClipboard": "복사하기",
+        "copied": "복사됨!",
+        "totalSupplyLabel": "총 공급량:",
+        "totalSupplyValue": "1,000,000,000",
+        "taxTitle": "3% 잭팟 세금",
+        "taxDesc": "모든 거래의 3%가 복권 펀드로 자동 전송됩니다. 여러분이 자는 동안에도 잭팟은 계속 커집니다.",
+        "burnTitle": "1% 자동 소각",
+        "burnDesc": "1%가 총 공급량에서 영구적으로 소각됩니다. 거래가 많을수록 $JPK는 희소해지고 가치가 상승합니다.",
+        "utilitiesTitle": "$JPK의 활용도",
+        "util1": "Power 6/55 티켓 구매에 사용.",
+        "util2": "자동화된 유동성을 활용한 $JPK 직접 보상.",
+        "util3": "$JPK를 보유하여 공급 희소성의 혜택을 누리세요.",
+        "playLotteryBtn": "지금 복권 플레이",
+        "buyJpkBtn": "PancakeSwap에서 $JPK 구매"
+    },
+    "Whitepaper": {
+        "title": "백서",
+        "subtitle": "탈중앙화 시스템 구조",
+        "summary": {
+            "title": "1. 프로젝트 요약",
+            "content": "Chainlink VRF로 구동되는 투명한 탈중앙화 복권 솔루션."
+        },
+        "problemSolution": {
+            "title": "2. 문제 및 해결책",
+            "problemTitle": "기존 복권 (블랙박스)",
+            "problemDesc": "중앙화되고 불투명한 추첨. 지연된 지급. 조작 위험 높음.",
+            "solutionTitle": "Jackpot Global (투명함)",
+            "solutionDesc": "Chainlink VRF를 통한 검증 가능한 무작위 추첨. 스마트 계약을 통한 즉시 지급. 윈윈 생태계."
+        },
+        "tokenomics": {
+            "title": "3. 토크노믹스 $JPK",
+            "totalSupply": "총 공급량: 1,000,000,000 $JPK",
+            "tax": "3% 세금 -> 잭팟 펀드",
+            "burn": "1% 자동 소각 (디플레이션)"
+        },
+        "gameMechanics": {
+            "title": "4. Power 6/55 게임 역학",
+            "ticketPrice": "티켓 가격: 10 $JPK",
+            "rules": "1부터 55까지 6개의 숫자를 선택하세요.",
+            "schedule": "추첨 일정: 매주 화, 목, 토요일 18:30 (UTC+7).",
+            "prize": "6개의 숫자를 모두 맞추면 잭팟 풀의 75% 획득."
+        },
+        "prizeClaimStrategy": {
+            "title": "5. 상금 수령 전략",
+            "instantClaim": {
+                "title": "즉시 수령 (Instant Claim)",
+                "desc": "즉각적인 수익을 원하는 플레이어를 위한 옵션입니다.",
+                "winnerReceives": "당첨자 수령: 잭팟 상금의 70% 즉시 지급.",
+                "seedPrize": "15% 시드 자금 (다음 회차 잭팟 보존).",
+                "treasury": "10% 운영 및 개발 금고.",
+                "burn": "5% 영구 소각 (총 공급 감소)."
+            },
+            "vestingClaim": {
+                "tag": "추천",
+                "title": "스마트 투자 (Vesting Claim)",
+                "desc": "수익을 극대화하고 덤핑을 방지하며 수동적 소득을 창출하세요.",
+                "winnerReceivesTotal": "당첨자 총 수령액: 잭팟의 90%.",
+                "instant": "즉시 수령: 50%.",
+                "vesting": "베스팀 (Vesting): 향후 4개월 동안 매월 10% 지급.",
+                "seedPrize": "4% 시드 자금.",
+                "treasury": "5% 운영 및 개발.",
+                "burn": "1% 영구 소각."
+            }
+        },
+        "technology": {
+            "title": "6. 기술 스택",
+            "stack": "Solidity(스마트 계약), Chainlink VRF(무작위성), Next.js(프론트엔드), NestJS(백엔드)."
+        },
+        "roadmap": {
+            "title": "7. 로드맵",
+            "phase1": "1단계: 테스트넷 출시 및 보안 감사",
+            "phase2": "2단계: 메인넷 활성화 및 DEX 상장",
+            "phase3": "3단계: 모바일 앱 및 랭킹 시스템",
+            "phase4": "4단계: 멀티체인 확장"
+        }
+    },
+    "Faucet": {
+        "title": "NEON FAUCET",
+        "subtitle": "보안 테스트넷 자금",
+        "description": "Power 6/55 터미널을 위해 지갑을 초기화하세요. 24시간 작동을 위한 100 $JPK 할당량을 받으세요.",
+        "balanceLabel": "현재 $JPK 잔액",
+        "claimButton": "100 $JPK 수령",
+        "cooldownLabel": "다음 수령 가능까지",
+        "claimSuccess": "입금 완료: 100 $JPK 획득.",
+        "claimError": "시스템 오류: 지급 절차가 중단되었습니다. 다시 시도하십시오.",
+        "needConnect": "접근 거부: 지갑을 먼저 연결하십시오.",
+        "processing": "트랜잭션 처리 중..."
     }
 }

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import ClaimPrizeModal from "@/components/ticket/ClaimPrizeModal";
 
 const BACKEND_URL =
     (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_BACKEND_URL) ||
@@ -40,7 +41,7 @@ type DrawHistoryItem = {
 
 
 
-function TicketCard({ ticket, type }: { ticket: TicketData, type: 'pending' | 'history' }) {
+function TicketCard({ ticket, type, onClaimClick }: { ticket: TicketData, type: 'pending' | 'history', onClaimClick?: () => void }) {
     const isWinner = ticket.isWinner;
     const t = useTranslations("MyTickets");
 
@@ -105,7 +106,9 @@ function TicketCard({ ticket, type }: { ticket: TicketData, type: 'pending' | 'h
                     </div>
 
                     {isWinner && (
-                        <button className="px-6 py-2 bg-[#39FF14] text-black font-black uppercase tracking-widest text-sm
+                        <button
+                            onClick={onClaimClick}
+                            className="px-6 py-2 bg-[#39FF14] text-black font-black uppercase tracking-widest text-sm
                              hover:bg-white hover:shadow-[0_0_20px_#39FF14] transition-all duration-300"
                             style={{ clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)" }}>
                             {t('claimPrize')}
@@ -122,7 +125,10 @@ export default function MyTicketsPage() {
     const [activeTab, setActiveTab] = useState<'pending' | 'history'>('pending');
     const t = useTranslations("MyTickets");
 
-    const { data: tickets = [], isLoading, isError } = useQuery<TicketData[]>({
+    const [selectedDrawId, setSelectedDrawId] = useState<number | 'all' | 'latest'>('latest');
+    const [claimingTicket, setClaimingTicket] = useState<{ id: number, amount: number } | null>(null);
+
+    const { data: tickets = [], isLoading, isError, refetch: refetchTickets } = useQuery<TicketData[]>({
         queryKey: ['tickets', address],
         queryFn: async () => {
             if (!address) return [];
@@ -145,8 +151,20 @@ export default function MyTicketsPage() {
             refetchInterval: 60000,
         });
 
+    const actualSelectedDrawId = selectedDrawId === 'latest'
+        ? (drawHistory.length > 0 ? drawHistory[0].onChainDrawId : 'all')
+        : selectedDrawId;
+
     const pendingTickets = tickets.filter(t => !t.draw || t.draw.status === 'PENDING');
-    const historyTickets = tickets.filter(t => t.draw && t.draw.status === 'COMPLETED');
+    let historyTickets = tickets.filter(t => t.draw && t.draw.status === 'COMPLETED');
+
+    if (actualSelectedDrawId !== 'all') {
+        historyTickets = historyTickets.filter(t => t.draw?.drawId === actualSelectedDrawId);
+    }
+
+    const displayDrawHistory = actualSelectedDrawId === 'all'
+        ? drawHistory
+        : drawHistory.filter(d => d.onChainDrawId === actualSelectedDrawId);
 
 
     if (!isConnected) {
@@ -219,9 +237,36 @@ export default function MyTicketsPage() {
                     <>
                         {activeTab === 'history' && (
                             <div className="mb-10 border border-gray-800 bg-black/60 p-6">
-                                <h2 className="text-lg md:text-xl font-mono font-bold uppercase tracking-widest text-gray-300 mb-4">
-                                    Global Draw History
-                                </h2>
+                                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                                    <h2 className="text-lg md:text-xl font-mono font-bold uppercase tracking-widest text-gray-300">
+                                        Global Draw History
+                                    </h2>
+
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-gray-500 font-mono text-xs uppercase tracking-widest hidden md:inline">Filter by Draw:</span>
+                                        <select
+                                            className="bg-black border border-gray-800 text-white font-mono text-xs uppercase tracking-widest py-2 px-3 focus:outline-none focus:border-[#00F0FF] transition-colors appearance-none cursor-pointer pr-8 relative"
+                                            style={{
+                                                backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2300F0FF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`,
+                                                backgroundRepeat: "no-repeat",
+                                                backgroundPosition: "right .7em top 50%",
+                                                backgroundSize: ".65em auto"
+                                            }}
+                                            value={selectedDrawId}
+                                            onChange={(e) => {
+                                                const val = e.target.value;
+                                                if (val === 'all' || val === 'latest') setSelectedDrawId(val);
+                                                else setSelectedDrawId(Number(val));
+                                            }}
+                                        >
+                                            <option value="latest">Latest Draw</option>
+                                            <option value="all">All Draws</option>
+                                            {drawHistory.map(d => (
+                                                <option key={d.id} value={d.onChainDrawId}>Draw #{d.onChainDrawId}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
 
                                 {isDrawHistoryLoading ? (
                                     <div className="flex items-center gap-3 text-gray-500 font-mono text-xs">
@@ -232,13 +277,13 @@ export default function MyTicketsPage() {
                                     <div className="text-[#FF003C] font-mono text-xs">
                                         Failed to load draw history.
                                     </div>
-                                ) : drawHistory.length === 0 ? (
+                                ) : displayDrawHistory.length === 0 ? (
                                     <div className="text-gray-600 font-mono text-xs uppercase tracking-widest">
                                         No completed draws yet.
                                     </div>
                                 ) : (
                                     <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
-                                        {drawHistory.map((draw) => (
+                                        {displayDrawHistory.map((draw) => (
                                             <div
                                                 key={draw.id}
                                                 className="flex flex-col md:flex-row md:items-center md:justify-between border border-gray-800 px-4 py-3 bg-black"
@@ -289,9 +334,21 @@ export default function MyTicketsPage() {
 
                         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <AnimatePresence mode="popLayout">
-                                {(activeTab === 'pending' ? pendingTickets : historyTickets).map((ticket) => (
-                                    <TicketCard key={ticket.id} ticket={ticket} type={activeTab} />
-                                ))}
+                                {(activeTab === 'pending' ? pendingTickets : historyTickets).map((ticket) => {
+                                    const matchedDraw = ticket.draw ? drawHistory.find(d => d.onChainDrawId === ticket.draw?.drawId) : null;
+                                    const prizeAmount = matchedDraw && matchedDraw.winnerCount > 0
+                                        ? Number(matchedDraw.totalPrize) / matchedDraw.winnerCount
+                                        : (ticket.draw ? Number(ticket.draw.totalPrize) : 0); // fallback if history doesn't load
+
+                                    return (
+                                        <TicketCard
+                                            key={ticket.id}
+                                            ticket={ticket}
+                                            type={activeTab}
+                                            onClaimClick={() => setClaimingTicket({ id: ticket.ticketId, amount: prizeAmount })}
+                                        />
+                                    );
+                                })}
                             </AnimatePresence>
 
                             {(activeTab === 'pending' ? pendingTickets : historyTickets).length === 0 && (
@@ -307,6 +364,15 @@ export default function MyTicketsPage() {
                     </>
                 )}
             </div>
+
+            {/* Modal Components */}
+            <ClaimPrizeModal
+                isOpen={!!claimingTicket}
+                ticketId={claimingTicket?.id || 0}
+                prizeAmount={claimingTicket?.amount || 0}
+                onClose={() => setClaimingTicket(null)}
+                onSuccess={() => refetchTickets()}
+            />
         </div>
     );
 }

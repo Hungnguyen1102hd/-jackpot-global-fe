@@ -163,7 +163,87 @@ export default function Whitepaper() {
                         </div>
                     </motion.section>
 
-                    {/* 5. Technology */}
+                    {/* 5. Prize Claim Strategy - Dual Claim Mechanism */}
+                    <motion.section variants={itemVariants} className="group relative">
+                        <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl overflow-hidden hover:border-gray-500/30 transition-colors duration-300">
+                            <h2 className="text-2xl font-bold text-white mb-8 uppercase flex items-center gap-3">
+                                <span className="w-2 h-8 bg-gradient-to-b from-[#FF3939] to-[#00F0FF] inline-block shadow-[0_0_8px_rgba(255,255,255,0.5)]"></span>
+                                {t("prizeClaimStrategy.title")}
+                            </h2>
+
+                            <div className="grid md:grid-cols-2 gap-8 relative z-10">
+                                {/* Card 1: Instant Claim */}
+                                <div className="group/card relative">
+                                    <div className="absolute -inset-0.5 bg-gradient-to-br from-[#FF3939] to-[#FF6B00] rounded-xl opacity-30 group-hover/card:opacity-100 transition-opacity duration-500 blur-md"></div>
+                                    <div className="relative bg-[#1A0505]/80 backdrop-blur-xl border border-[#FF3939]/50 p-6 md:p-8 rounded-xl h-full shadow-[0_0_20px_rgba(255,57,57,0.15)] flex flex-col">
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <div className="w-12 h-12 shrink-0 rounded-full bg-[#FF3939]/20 flex items-center justify-center border border-[#FF3939] shadow-[0_0_15px_#FF3939]">
+                                                <span className="text-2xl">⚡</span>
+                                            </div>
+                                            <h3 className="text-xl md:text-2xl font-black text-[#FF3939] uppercase tracking-wider drop-shadow-[0_0_8px_rgba(255,57,57,0.5)] leading-tight">
+                                                {t("prizeClaimStrategy.instantClaim.title")}
+                                            </h3>
+                                        </div>
+                                        <p className="text-gray-400 font-mono text-sm mb-6 flex-grow">
+                                            {t("prizeClaimStrategy.instantClaim.desc")}
+                                        </p>
+
+                                        <div className="space-y-4">
+                                            <div className="bg-[#FF3939]/10 border border-[#FF3939]/30 p-4 rounded-lg relative overflow-hidden">
+                                                <div className="absolute right-0 top-0 w-16 h-16 bg-[#FF3939] opacity-10 blur-xl"></div>
+                                                <span className="block text-[#FF3939] font-bold md:text-lg">{t("prizeClaimStrategy.instantClaim.winnerReceives")}</span>
+                                            </div>
+                                            <ul className="text-gray-300 font-mono text-sm space-y-3 pl-2 border-l-2 border-[#FF3939]/30">
+                                                <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#FF3939] mt-1.5 shadow-[0_0_5px_#FF3939]"></div><span className="leading-snug">{t("prizeClaimStrategy.instantClaim.seedPrize")}</span></li>
+                                                <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#FF3939] mt-1.5 shadow-[0_0_5px_#FF3939]"></div><span className="leading-snug">{t("prizeClaimStrategy.instantClaim.treasury")}</span></li>
+                                                <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#FF3939] mt-1.5 shadow-[0_0_5px_#FF3939]"></div><span className="leading-snug">{t("prizeClaimStrategy.instantClaim.burn")}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card 2: Vesting Claim */}
+                                <div className="group/card relative mt-4 md:mt-0">
+                                    {/* Recommended Tag */}
+                                    <div className="absolute -top-3 -right-3 z-20 bg-[#00F0FF] text-black font-black text-[10px] md:text-xs uppercase px-3 py-1.5 md:px-4 border border-[#39FF14] shadow-[0_0_15px_#00F0FF] rotate-12 flex items-center gap-1">
+                                        <span>💎</span> {t("prizeClaimStrategy.vestingClaim.tag")}
+                                    </div>
+                                    <div className="absolute -inset-0.5 bg-gradient-to-bl from-[#39FF14] to-[#00F0FF] rounded-xl opacity-40 group-hover/card:opacity-100 transition-opacity duration-500 blur-md"></div>
+                                    <div className="relative bg-[#001010]/90 backdrop-blur-xl border border-[#00F0FF]/60 p-6 md:p-8 rounded-xl h-full shadow-[0_0_30px_rgba(0,240,255,0.2)] flex flex-col">
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <div className="w-12 h-12 shrink-0 rounded-full bg-[#00F0FF]/20 flex items-center justify-center border border-[#00F0FF] shadow-[0_0_15px_#00F0FF]">
+                                                <span className="text-2xl">🛡️</span>
+                                            </div>
+                                            <h3 className="text-xl md:text-2xl font-black text-[#00F0FF] uppercase tracking-wider drop-shadow-[0_0_10px_rgba(0,240,255,0.6)] leading-tight">
+                                                {t("prizeClaimStrategy.vestingClaim.title")}
+                                            </h3>
+                                        </div>
+                                        <p className="text-gray-400 font-mono text-sm mb-6 flex-grow">
+                                            {t("prizeClaimStrategy.vestingClaim.desc")}
+                                        </p>
+
+                                        <div className="space-y-4">
+                                            <div className="bg-[#00F0FF]/10 border border-[#00F0FF]/40 p-4 rounded-lg relative overflow-hidden">
+                                                <div className="absolute right-0 bottom-0 w-24 h-24 bg-[#39FF14] opacity-10 blur-xl"></div>
+                                                <span className="block text-[#39FF14] font-black text-lg md:text-xl drop-shadow-[0_0_8px_rgba(57,255,20,0.4)] mb-3">{t("prizeClaimStrategy.vestingClaim.winnerReceivesTotal")}</span>
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-xs">
+                                                    <div className="bg-black/60 p-2.5 border border-[#00F0FF]/40 rounded text-[#00F0FF] shadow-inner flex items-center justify-center text-center leading-snug">{t("prizeClaimStrategy.vestingClaim.instant")}</div>
+                                                    <div className="bg-black/60 p-2.5 border border-[#39FF14]/40 rounded text-[#39FF14] shadow-inner flex items-center justify-center text-center leading-snug">{t("prizeClaimStrategy.vestingClaim.vesting")}</div>
+                                                </div>
+                                            </div>
+                                            <ul className="text-gray-300 font-mono text-sm space-y-3 pl-2 border-l-2 border-[#00F0FF]/30">
+                                                <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#00F0FF] mt-1.5 shadow-[0_0_5px_#00F0FF]"></div><span className="leading-snug">{t("prizeClaimStrategy.vestingClaim.seedPrize")}</span></li>
+                                                <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#00F0FF] mt-1.5 shadow-[0_0_5px_#00F0FF]"></div><span className="leading-snug">{t("prizeClaimStrategy.vestingClaim.treasury")}</span></li>
+                                                <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#00F0FF] mt-1.5 shadow-[0_0_5px_#00F0FF]"></div><span className="leading-snug">{t("prizeClaimStrategy.vestingClaim.burn")}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.section>
+
+                    {/* 6. Technology */}
                     <motion.section variants={itemVariants} className="group relative">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00F0FF] to-transparent rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-sm"></div>
 
