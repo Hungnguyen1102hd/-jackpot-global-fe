@@ -16,6 +16,7 @@ type DrawHistoryItem = {
     winningNumbers: number[];
     totalPrize: string;
     status: string;
+    transactionHash: string | null;
     executedAt: string;
     ticketCount: number;
     winnerCount: number;
@@ -103,9 +104,22 @@ export default function HistoryPage() {
                                     <div className="flex items-center gap-2 text-[#FF3939]">
                                         <span className="text-2xl font-black uppercase tracking-wider">{t('draw')} #{draw.onChainDrawId || '-'}</span>
                                     </div>
-                                    <div className="flex items-center gap-2 text-white/50 text-sm">
-                                        <Calendar className="w-4 h-4" />
-                                        <span className="tracking-wider">{new Date(draw.executedAt).toLocaleDateString()}</span>
+                                    <div className="flex flex-col gap-1 text-white/50 text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <Calendar className="w-4 h-4" />
+                                            <span className="tracking-wider">{new Date(draw.executedAt).toLocaleDateString()}</span>
+                                        </div>
+                                        {draw.transactionHash && (
+                                            <a
+                                                href={`https://testnet.bscscan.com/tx/${draw.transactionHash}`}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="flex items-center gap-1 text-[#39FF14] hover:text-white hover:underline transition-all duration-200 mt-1 uppercase text-xs tracking-widest"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                                {t('viewOnBlockchain')}
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
 

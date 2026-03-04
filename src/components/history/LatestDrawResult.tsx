@@ -21,6 +21,7 @@ type LatestDrawResultResponse = {
     drawDate: string;
     winningNumbers: number[];
     prizePool: string;
+    transactionHash: string | null;
     tiers: PrizeTier[];
 };
 
@@ -108,12 +109,29 @@ export default function LatestDrawResult() {
                         <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-blue-500">
                             {t('title')}
                         </h2>
-                        <p className="text-white/60 font-mono text-sm uppercase tracking-widest">
-                            {t('drawLabel')} #{data.drawId} <span className="mx-2">|</span>{' '}
-                            {t('dateLabel')}:{' '}
-                            <span className="text-[#00F0FF]">
-                                {new Date(data.drawDate).toLocaleDateString()}
+                        <p className="text-white/60 font-mono text-sm uppercase tracking-widest flex items-center flex-wrap gap-2 mt-1">
+                            <span>{t('drawLabel')} #{data.drawId}</span>
+                            <span className="text-white/20">|</span>
+                            <span>
+                                {t('dateLabel')}:{' '}
+                                <span className="text-[#00F0FF]">
+                                    {new Date(data.drawDate).toLocaleDateString()}
+                                </span>
                             </span>
+                            {data.transactionHash && (
+                                <>
+                                    <span className="text-white/20">|</span>
+                                    <a
+                                        href={`https://testnet.bscscan.com/tx/${data.transactionHash}`}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="text-[#39FF14] hover:text-white hover:underline transition-all duration-200 flex items-center gap-1"
+                                    >
+                                        {t('viewOnBlockchain')}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    </a>
+                                </>
+                            )}
                         </p>
                     </div>
 
@@ -161,8 +179,8 @@ export default function LatestDrawResult() {
                                         <tr
                                             key={idx}
                                             className={`border-b border-white/5 transition-colors ${isJackpot
-                                                    ? 'bg-[#FF3939]/10 relative group'
-                                                    : 'hover:bg-white/5'
+                                                ? 'bg-[#FF3939]/10 relative group'
+                                                : 'hover:bg-white/5'
                                                 }`}
                                         >
                                             {/* Jackpot left accent line */}
@@ -171,8 +189,8 @@ export default function LatestDrawResult() {
                                             )}
                                             <td
                                                 className={`py-4 px-2 font-bold tracking-wider ${isJackpot
-                                                        ? 'text-[#FF3939] animate-pulse drop-shadow-[0_0_5px_rgba(255,57,57,0.8)]'
-                                                        : 'text-white/90'
+                                                    ? 'text-[#FF3939] animate-pulse drop-shadow-[0_0_5px_rgba(255,57,57,0.8)]'
+                                                    : 'text-white/90'
                                                     }`}
                                             >
                                                 {isJackpot ? tier.name : t('tierPrefix') + ' ' + tier.name.replace('Giải ', '')}
@@ -188,8 +206,8 @@ export default function LatestDrawResult() {
                                             </td>
                                             <td
                                                 className={`py-4 px-2 text-right font-black ${isJackpot
-                                                        ? 'text-[#FCEE09] text-xl drop-shadow-[0_0_8px_rgba(252,238,9,0.5)]'
-                                                        : 'text-[#00F0FF]'
+                                                    ? 'text-[#FCEE09] text-xl drop-shadow-[0_0_8px_rgba(252,238,9,0.5)]'
+                                                    : 'text-[#00F0FF]'
                                                     }`}
                                             >
                                                 {isNaN(Number(tier.prizeValue))

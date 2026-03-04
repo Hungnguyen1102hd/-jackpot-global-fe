@@ -53,7 +53,8 @@
         "winningNumbers": "Bộ Số Trúng Thưởng",
         "jackpot": "Giải Jackpot",
         "winners": "Số Người Trúng",
-        "noRecords": "Chưa có dữ liệu kỳ quay nào."
+        "noRecords": "Chưa có dữ liệu kỳ quay nào.",
+        "viewOnBlockchain": "Xem trên Blockchain"
     },
     "TokenInfo": {
         "heroTitle": "$JPK Token - Trái tim của hệ sinh thái Jackpot Global",
@@ -161,6 +162,7 @@
         "disclaimer": "Dữ liệu được truy xuất trực tiếp từ Smart Contract & Indexer. Minh bạch 100%.",
         "loading": "ĐANG TẢI DỮ LIỆU...",
         "error": "LỖI KẾT NỐI MÁY CHỦ",
-        "standby": "HỆ THỐNG ĐANG KHỞI TẠO. CHỜ KỲ QUAY ĐẦU TIÊN."
+        "standby": "HỆ THỐNG ĐANG KHỞI TẠO. CHỜ KỲ QUAY ĐẦU TIÊN.",
+        "viewOnBlockchain": "XEM TRÊN BLOCKCHAIN"
     }
 }
