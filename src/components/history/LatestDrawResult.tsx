@@ -217,16 +217,14 @@ export default function LatestDrawResult() {
                                             </td>
                                             <td
                                                 className={`py-4 px-2 text-right font-black tracking-tight ${isJackpot
-                                                    ? 'text-[#FCEE09] text-xl md:text-2xl drop-shadow-[0_0_12px_rgba(252,238,9,0.4)]'
-                                                    : 'text-[#00F0FF] text-lg'
+                                                    ? 'text-[#FCEE09] text-lg md:text-xl drop-shadow-[0_0_10px_rgba(252,238,9,0.4)]'
+                                                    : 'text-[#00F0FF] text-base md:text-lg'
                                                     }`}
                                             >
                                                 {isNaN(Number(tier.prizeValue))
                                                     ? tier.prizeValue
                                                     : Number(tier.prizeValue).toLocaleString()}
-                                                {!isNaN(Number(tier.prizeValue)) && (
-                                                    <span className="text-[10px] ml-1 opacity-60 font-medium">$JPK</span>
-                                                )}
+                                                <span className={`ml-1 font-medium ${isJackpot ? 'text-xs opacity-70' : 'text-[10px] opacity-60'}`}>$JPK</span>
                                             </td>
                                         </tr>
                                     );
