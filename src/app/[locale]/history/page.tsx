@@ -102,7 +102,7 @@ export default function HistoryPage() {
                                 {/* Draw Info */}
                                 <div className="flex flex-col gap-2 min-w-[150px]">
                                     <div className="flex items-center gap-2 text-[#FF3939]">
-                                        <span className="text-2xl font-black uppercase tracking-wider">{t('draw')} #{draw.onChainDrawId || '-'}</span>
+                                        <span className="text-2xl font-black uppercase tracking-wider">{t('draw')} #{draw.onChainDrawId ?? '-'}</span>
                                     </div>
                                     <div className="flex flex-col gap-1 text-white/50 text-sm">
                                         <div className="flex items-center gap-2">

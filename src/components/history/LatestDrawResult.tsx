@@ -79,12 +79,16 @@ export default function LatestDrawResult() {
     }
 
     // Handle empty state gracefully
-    if (!data || data.drawId === 0 || data.winningNumbers.length === 0) {
+    if (!data || data.winningNumbers.length === 0) {
         return (
             <motion.div
                 variants={fadeUpVariant}
                 className="w-full relative overflow-hidden bg-black/80 backdrop-blur-md border border-[#00F0FF]/20 rounded-2xl p-10 flex flex-col items-center justify-center min-h-[300px]"
             >
+                {/* Decorative corners */}
+                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#00F0FF]/50 rounded-tl-xl pointer-events-none"></div>
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#00F0FF]/50 rounded-br-xl pointer-events-none"></div>
+
                 <div className="absolute inset-0 bg-[url('/scanline.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
                 <span className="text-[#00F0FF] text-xl tracking-[0.3em] font-mono text-center animate-pulse drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]">
                     {t('standby')}
@@ -110,7 +114,7 @@ export default function LatestDrawResult() {
                             {t('title')}
                         </h2>
                         <p className="text-white/60 font-mono text-sm uppercase tracking-widest flex items-center flex-wrap gap-2 mt-1">
-                            <span>{t('drawLabel')} #{data.drawId}</span>
+                            <span>{t('drawLabel')} #{data.drawId ?? '-'}</span>
                             <span className="text-white/20">|</span>
                             <span>
                                 {t('dateLabel')}:{' '}
