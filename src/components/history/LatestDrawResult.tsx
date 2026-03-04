@@ -187,22 +187,24 @@ export default function LatestDrawResult() {
                                     return (
                                         <tr
                                             key={idx}
-                                            className={`border-b border-white/5 transition-colors ${isJackpot
-                                                ? 'bg-[#FF3939]/10 relative group'
+                                            className={`border-b border-white/5 transition-colors relative ${isJackpot
+                                                ? 'bg-[#FF3939]/10 group'
                                                 : 'hover:bg-white/5'
                                                 }`}
                                         >
-                                            {/* Jackpot left accent line */}
-                                            {isJackpot && (
-                                                <td className="absolute left-0 top-0 bottom-0 w-1 bg-[#FF3939] shadow-[0_0_10px_#FF3939]"></td>
-                                            )}
                                             <td
-                                                className={`py-4 px-2 font-bold tracking-wider ${isJackpot
+                                                className={`py-4 px-2 font-bold tracking-wider relative ${isJackpot
                                                     ? 'text-[#FF3939] drop-shadow-[0_0_8px_rgba(255,57,57,0.6)]'
                                                     : 'text-white/80'
                                                     }`}
                                             >
-                                                {isJackpot ? tier.name : t('tierPrefix') + ' ' + tier.name.replace('Giải ', '')}
+                                                {/* Jackpot left accent line */}
+                                                {isJackpot && (
+                                                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#FF3939] shadow-[0_0_10px_#FF3939]"></div>
+                                                )}
+                                                <span className={isJackpot ? 'pl-2' : ''}>
+                                                    {isJackpot ? tier.name : t('tierPrefix') + ' ' + tier.name.replace('Giải ', '')}
+                                                </span>
                                             </td>
                                             <td className="py-4 px-2 text-white/50 text-sm hidden sm:table-cell text-center font-mono">
                                                 {tier.match}
