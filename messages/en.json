@@ -98,7 +98,7 @@
             "title": "4. Power 6/55 Game Mechanics",
             "ticketPrice": "Ticket Price: 10 $JPK",
             "rules": "Choose 6 numbers from 1 to 55.",
-            "schedule": "Draw Schedule: 18:30 (UTC+7) every Tuesday, Thursday, Saturday.",
+            "schedule": "Draw Schedule: 18:30 (UTC+7) Daily.",
             "prize": "Match all 6 numbers to win 75% of the Jackpot Pool."
         },
         "prizeClaimStrategy": {

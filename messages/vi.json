@@ -98,7 +98,7 @@
             "title": "4. Cơ chế trò chơi Power 6/55",
             "ticketPrice": "Giá vé: 10 JPK",
             "rules": "Chọn 6 số từ 1-55.",
-            "schedule": "Quay thưởng: 18:30 (UTC+7) Thứ 3, 5, 7.",
+            "schedule": "Quay thưởng: 18:30 (UTC+7) Mỗi ngày.",
             "prize": "Trúng 6 số nhận 75% hũ."
         },
         "prizeClaimStrategy": {
