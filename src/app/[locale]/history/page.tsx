@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { History, Calendar, DollarSign, Users, Loader2 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
+import LatestDrawResult from '@/components/history/LatestDrawResult';
 
 const BACKEND_URL =
     (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_BACKEND_URL) ||
@@ -66,6 +67,11 @@ export default function HistoryPage() {
                     <p className="text-xl text-[#00F0FF] tracking-widest uppercase font-bold drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]">
                         {t('subtitle')}
                     </p>
+                </motion.section>
+
+                {/* Latest Draw Result */}
+                <motion.section variants={fadeUpVariant} className="flex flex-col gap-6 w-full mt-4">
+                    <LatestDrawResult />
                 </motion.section>
 
                 {/* Filters/Controls would go here (e.g., Year/Month selector) */}

@@ -146,5 +146,21 @@
         "claimError": "LỖI HỆ THỐNG: Quá trình bị gián đoạn. Vui lòng thử lại.",
         "needConnect": "TỪ CHỐI TRUY CẬP: Hãy kết nối ví trước.",
         "processing": "ĐANG XỬ LÝ GIAO DỊCH..."
+    },
+    "LatestDraw": {
+        "title": "KẾT QUẢ QUAY SỐ MỞ THƯỞNG POWER 6/55",
+        "drawLabel": "Kỳ quay thưởng",
+        "dateLabel": "Ngày",
+        "winningNumbers": "Dãy số trúng",
+        "tablePrize": "GIẢI THƯỞNG",
+        "tableMatch": "KẾT QUẢ",
+        "tableWinners": "SỐ LƯỢNG",
+        "tableValue": "GIÁ TRỊ ()",
+        "tierPrefix": "Giải",
+        "jackpotName": "Jackpot",
+        "disclaimer": "Dữ liệu được truy xuất trực tiếp từ Smart Contract & Indexer. Minh bạch 100%.",
+        "loading": "ĐANG TẢI DỮ LIỆU...",
+        "error": "LỖI KẾT NỐI MÁY CHỦ",
+        "standby": "HỆ THỐNG ĐANG KHỞI TẠO. CHỜ KỲ QUAY ĐẦU TIÊN."
     }
 }

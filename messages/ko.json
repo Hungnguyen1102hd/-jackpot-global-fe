@@ -146,5 +146,21 @@
         "claimError": "시스템 오류: 지급 절차가 중단되었습니다. 다시 시도하십시오.",
         "needConnect": "접근 거부: 지갑을 먼저 연결하십시오.",
         "processing": "트랜잭션 처리 중..."
+    },
+    "LatestDraw": {
+        "title": "파워 6/55 최신 추첨 결과",
+        "drawLabel": "추첨 회차",
+        "dateLabel": "날짜",
+        "winningNumbers": "당첨 번호",
+        "tablePrize": "당첨금",
+        "tableMatch": "결과",
+        "tableWinners": "당첨자 수",
+        "tableValue": "금액 ()",
+        "tierPrefix": "등",
+        "jackpotName": "잭팟",
+        "disclaimer": "스마트 컨트랙트 및 인덱서에서 직접 검색된 데이터입니다. 100% 투명합니다.",
+        "loading": "데이터 불러오는 중...",
+        "error": "서버 연결 오류",
+        "standby": "시스템 대기 중: 첫 추첨을 기다리는 중입니다"
     }
 }

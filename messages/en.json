@@ -146,5 +146,21 @@
         "claimError": "SYSTEM FAILURE: Claim sequence interrupted. Please try again.",
         "needConnect": "ACCESS DENIED: Connect wallet to proceed.",
         "processing": "PROCESSING TRANSACTION..."
+    },
+    "LatestDraw": {
+        "title": "POWER 6/55 LATEST DRAW RESULT",
+        "drawLabel": "Draw",
+        "dateLabel": "Date",
+        "winningNumbers": "Winning Numbers",
+        "tablePrize": "PRIZE",
+        "tableMatch": "MATCH",
+        "tableWinners": "WINNERS",
+        "tableValue": "VALUE ()",
+        "tierPrefix": "Prize",
+        "jackpotName": "Jackpot",
+        "disclaimer": "Data retrieved directly from Smart Contract & Indexer. 100% Transparent.",
+        "loading": "LOADING DATA...",
+        "error": "SERVER CONNECTION ERROR",
+        "standby": "SYSTEM STANDBY: WAITING FOR THE FIRST DRAW"
     }
 }
