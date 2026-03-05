@@ -65,7 +65,7 @@
         "totalSupplyLabel": "Tổng cung (Total Supply):",
         "totalSupplyValue": "1,000,000,000",
         "taxTitle": "3% Jackpot Tax",
-        "taxDesc": "3% mọi giao dịch được tự động chuyển vào Quỹ Xổ Số. Hũ Jackpot sẽ liên tục phình to ngay cả khi bạn đang ngủ.",
+        "taxDesc": "3% mọi giao dịch được tự động chuyển vào Quỹ Xổ Số. Jackpot sẽ liên tục phình to ngay cả khi bạn đang ngủ.",
         "burnTitle": "1% Auto-Burn",
         "burnDesc": "1% bị đốt cháy vĩnh viễn khỏi tổng cung. Càng nhiều giao dịch, $JPK càng khan hiếm và tăng giá trị.",
         "utilitiesTitle": "Tính ứng dụng của $JPK",
@@ -100,14 +100,14 @@
             "ticketPrice": "Giá vé: 10 JPK",
             "rules": "Chọn 6 số từ 1-55.",
             "schedule": "Quay thưởng: 18:30 (UTC+7) Mỗi ngày.",
-            "prize": "Trúng 6 số nhận 75% hũ."
+            "prize": "Trúng 6 số nhận Jackpot."
         },
         "prizeClaimStrategy": {
             "title": "5. Chiến lược Trả thưởng",
             "instantClaim": {
                 "title": "Nhận Ngay Cấp Tốc",
                 "desc": "Dành cho người chơi muốn chốt lời ngay lập tức.",
-                "winnerReceives": "Người trúng nhận: 70% giá trị hũ Jackpot ngay lập tức.",
+                "winnerReceives": "Người trúng nhận: 70% giá trị Jackpot ngay lập tức.",
                 "seedPrize": "15% Vốn mồi (Seed Prize) giữ lại cho kỳ sau.",
                 "treasury": "10% Quỹ Vận hành & Phát triển (Treasury).",
                 "burn": "5% Đốt vĩnh viễn (Burn) giảm tổng cung."
@@ -116,7 +116,7 @@
                 "tag": "Khuyên Dùng",
                 "title": "Đầu Tư Thông Minh",
                 "desc": "Tối đa hóa lợi nhuận, chống xả token và tạo thu nhập thụ động.",
-                "winnerReceivesTotal": "Người trúng nhận tổng: 90% giá trị hũ.",
+                "winnerReceivesTotal": "Người trúng nhận tổng: 90% giá trị Jackpot.",
                 "instant": "Nhận ngay lập tức: 50%.",
                 "vesting": "Nhận dần (Vesting): 10% mỗi tháng trong vòng 4 tháng tiếp theo.",
                 "seedPrize": "4% Vốn mồi (Seed Prize).",
